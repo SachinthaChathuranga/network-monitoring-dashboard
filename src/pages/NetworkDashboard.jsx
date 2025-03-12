@@ -66,8 +66,6 @@ const NetworkDashboard = () => {
   const mockPCs = useSelector((state) => state.pcs.pcs);
   const [filteredPCs, setFilteredPCs] = useState(mockPCs);
 
-  console.log("hello", mockPCs);
-
   useEffect(() => {
     let interval;
     if (isRunning) {
@@ -311,7 +309,7 @@ const NetworkDashboard = () => {
                   openModal2={openModal2}
                 />
                 {isModel2Open && (
-                  <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+                  <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
                     <div className="relative w-1/4  border-4 border-red-500 bg-white rounded-lg pb-4">
                       <button
                         onClick={closeModal2}

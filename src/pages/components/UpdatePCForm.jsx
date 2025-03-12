@@ -7,11 +7,13 @@ const UpdatePCForm = ({ selectedId, setSelectedId, closePopup }) => {
   const allPCs = useSelector((state) => state.pcs.pcs);
   const selectedPC = allPCs.find((pc) => pc.id === selectedId);
 
+  console.log(selectedPC)
+
   const [formData, setFormData] = useState({
     id: selectedPC?.id || "", // If updating, keep the selected PC's id
     ip: selectedPC?.ip || "",
     mac: selectedPC?.mac || "",
-    status: selectedPC?.status || "active", // Default status is 'active'
+    status: selectedPC?.status || "active", 
   });
 
   // Update form data when selectedPC changes
@@ -122,7 +124,7 @@ const UpdatePCForm = ({ selectedId, setSelectedId, closePopup }) => {
           <label>Status:</label>
           <select name="status" value={formData.status} onChange={handleChange}>
             <option value="active">Active</option>
-            <option value="inactive">Inactive</option>
+            <option value="disconnected">Inactive</option>
             {/* <option value="maintenance">Maintenance</option> */}
           </select>
         </div>
