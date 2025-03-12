@@ -13,6 +13,7 @@ import { BiEditAlt } from "react-icons/bi";
 import PCPopupWindow from "./components/PCPopupWindow";
 import AddBlackListPopupWindow from "./AddBlackListPopupWindow";
 import UpdatePCForm from "./components/UpdatePCForm";
+import { IoMdSearch } from "react-icons/io";
 
 // const mockPCsa = Array.from({ length: 100 }, (_, i) => ({
 //   id: `PC-${i + 1}`,
@@ -208,12 +209,17 @@ const NetworkDashboard = () => {
           </span> */}
         </div>
 
-        <div className="self-center">
-          <input
-            type="text"
-            placeholder="Find PC..."
-            className="px-2 py-[1px] text-lg border-blue-500 border-4 rounded-lg mx-1"
-          />
+        <div className="self-center flex ">
+          <div className="flex text-3xl px-2 py-[1px]  border-blue-500 border-4 rounded-lg mx-1">
+            <input
+              type="text"
+              placeholder="Find PC..."
+              className="text-lg"
+            />
+            <span className="self-center">
+              <IoMdSearch />
+            </span>
+          </div>
           <select
             value={selectedLab}
             onChange={(e) => setSelectedLab(e.target.value)}

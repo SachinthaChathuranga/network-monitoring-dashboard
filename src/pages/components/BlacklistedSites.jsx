@@ -2,7 +2,13 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 export default function BlacklistedSites({ sites }) {
-  const blacklistedIPs = useSelector((state) => state.blacklist.blackListedIPs);
+  const networkList = useSelector(
+    (state) => state.blacklist.blackListedIPs
+  );
+  // blacklistedIPs 
+
+  const blacklistedIPs = networkList.filter((ip) => ip.restrictionType === "restricted")
+  console.log(blacklistedIPs);
 
   return (
     <div className="p-2 border-2 border-blue-500 rounded-lg">
